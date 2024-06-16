@@ -1,11 +1,7 @@
 function send() {
     let inputTask = document.getElementById('input-task');
     let task = inputTask.value;
-    let htmlString = `
-      <input type="checkbox">
-      <p>${task}</p>
-      <br>
-    `;
+    let htmlString = '<br>' + '<input type="checkbox"><p>' + task + '</p>' + '<br>';
 
     localStorage.setItem(task, task);
 
