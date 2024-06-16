@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="console.log('Página Carregada')">
+
+    <div class="task-list">
+
+        <!-- Parte onde as tarefas serão colocadas -->
+        <div class="container">
+
+            <h1>Gerenciador de Tarefas</h1>
+
+            <div class="layout">
+                <input id="input-task" type="text" placeholder="Digite sua Tarefa">
+                <button class="button" onclick="send()">Enviar Tarefa</button>
+                <div id="tasks"></div>
+            </div>
+
+        </div>
+
+        <!-- Botão de limpar tarefas -->
+        <div class="nav">
+            <button class="button" id="button1">Limpar Tarefas</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
