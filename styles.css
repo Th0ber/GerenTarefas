@@ -82,7 +82,8 @@ h1 {
 }
 
 #tasks {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     margin: auto;
     padding: 10px;
     text-align: center;
