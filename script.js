@@ -1,19 +1,40 @@
-function send() {
-    let inputTask = document.getElementById('input-task');
-    let task = inputTask.value;
-    let htmlString = '<br>' + '<input type="checkbox"><p>' + task + '</p>';
+function addTask() {
+  let inputTask = document.getElementById('input-task');
+  let task = inputTask.value.trim();
+  
+  if (!task) {
+    alert('Por favor, digite uma tarefa!');
+    return;
+  }
 
-    localStorage.setItem(task, task);
+  let taskDiv = document.createElement('div');
+  taskDiv.classList.add('task');
 
-    document.getElementById('tasks').innerHTML += htmlString;
-    
-    inputTask.value = ''; 
+  let checkBox = document.createElement('input');
+  checkBox.type = 'checkbox';
+  checkBox.addEventListener('change', function() {
+  this.parentNode.classList.toggle('completed');
+  });
+
+  let taskText = document.createElement('p');
+  taskText.textContent = task;
+
+  taskDiv.appendChild(checkBox);
+  taskDiv.appendChild(taskText);
+  
+  let tasksContainer = document.getElementById('tasks');
+  tasksContainer.appendChild(taskDiv);
+
+  inputTask.value = '';
+
+  taskDiv.appendChild(checkBox);
+  taskText.style.marginLeft = '10px';
+   taskDiv.appendChild(taskText);
 }
-
+  
 let button = document.getElementById('button1');
 
 button.addEventListener('click', function() {
-    let tasks = document.getElementById('tasks');
-    tasks.innerHTML = '';
-    localStorage.clear();
-})
+    let tasksContainer = document.getElementById('tasks');
+    tasksContainer.innerHTML = '';
+});
